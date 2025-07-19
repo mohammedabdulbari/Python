@@ -1,10 +1,14 @@
 
-def pangram(phrase):
-    letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
+import re
 
-    phrase = set(phrase)
+def panrgam(phrase):
+    letters = re.sub(r'[^a-zA-Z]', '', phrase)
+    letter_set = set(letters.lower())
+    if len(letter_set) == 26:
+        return True
+    else:
+        return False
 
-    return phrase >= letters
+str = 'The quick brown fox jumps over the lazy dog'
 
-print(pangram('the quick brown fox jumps over the lazy'))
-
+print(panrgam(str))
