@@ -1,11 +1,17 @@
 
-work_hours = [int(x) for x in input('Enter hours per day in entire week, separated by space').split()]
-wage = int(input('Enter hourly wage'))
+hours = input('Enter Hours separated by spaces:')
+wage = int(input('Enter Hourly Wage:'))
 
-total = sum(work_hours)
+hours = hours.split()
 
-salary = total * wage
+week_hours = [int(x) for x in hours]
 
-print('Salary is',salary)
+total_hrs = sum(week_hours)
 
+if total_hrs <= 40:
+    tot_wages = total_hrs * wage
+else:
+    overtime = total_hrs - 40
+    tot_wages = 40 * wage + overtime * wage * 1.5
 
+print('Total Wages:', tot_wages)
