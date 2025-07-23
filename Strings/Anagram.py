@@ -1,14 +1,28 @@
+# Example With Program
+s1 = "listen"
+s2 = "silent"
 
-s1 = input('Enter a String')
-s2 = input('Enter second String')
+sorted_s1 = sorted(s1)
+sorted_s2 = sorted(s2)
 
-if len(s1) != len(s2):
-    print('Not Anagram')
+print(sorted_s1)  # Output: ['e', 'i', 'l', 'n', 's', 't']
+print(sorted_s2)  # Output: ['e', 'i', 'l', 'n', 's', 't']
+
+# Now, comparing the sorted versions
+if sorted_s1 == sorted_s2:
+    print("Anagrams")
 else:
+    print("Not Anagrams")
 
-    for x in s1:
-        if x not in s2:
-            print('Not Anagarm')
-            break;
-    else:
-        print('Anagram')
+# Output: Anagrams
+
+
+#This code uses the sorted function to create sorted versions of both strings and
+##then checks if these sorted versions are the same. If they are, it means the two 
+#strings are anagrams, considering both the length and frequency of characters.
+
+
+
+
+
+
